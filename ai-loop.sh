@@ -24,16 +24,12 @@ echo "----------------------------------------"
 
 run_claude() {
   local input="$1"
-  claude code --print --dangerously-skip-permissions "$input"
+  claude --print --dangerously-skip-permissions "$input"
 }
 
 run_devin() {
   local input="$1"
-
-  devin \
-    --permission-mode dangerous \
-    -p \
-    "$input"
+  devin --permission-mode dangerous -p "$input"
 }
 
 run_cli() {
